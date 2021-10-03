@@ -68,6 +68,15 @@ class Database {
     return notesItemCollection.snapshots();
   }
 
+  static Future<int> readTotalItems() {
+    CollectionReference notesItemCollection = _mainCollection
+        .doc('1234')
+        .collection('items')
+          ..orderBy('createdAt', descending: true);
+    print(notesItemCollection.snapshots().length.toString());
+    return notesItemCollection.snapshots().length;
+  }
+
   static Future<void> deleteItem({
     required String docId,
   }) async {

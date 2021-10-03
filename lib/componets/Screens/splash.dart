@@ -28,6 +28,13 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       body: Container(
         color: Colors.green,
+        child: Center(
+          child: Icon(
+            Icons.book,
+            color: Colors.white,
+            size: 30,
+          ),
+        ),
       ),
     );
   }
